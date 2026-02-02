@@ -25,7 +25,7 @@ RUN git clone --depth 1 https://github.com/steipete/gogcli.git /tmp/gogcli \
     && cd /tmp/gogcli \
     && sed -i 's/go 1.25/go 1.24/' go.mod \
     && /usr/local/go/bin/go mod tidy \
-    && make build \
+    && PATH=/usr/local/go/bin:$PATH make build \
     && cp bin/gog /usr/local/bin/ \
     && rm -rf /tmp/gogcli /root/go
 
